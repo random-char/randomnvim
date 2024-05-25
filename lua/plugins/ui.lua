@@ -1,3 +1,4 @@
+--todo add highlight
 return {
 	{
 		"catppuccin/nvim",
