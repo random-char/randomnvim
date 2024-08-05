@@ -38,8 +38,8 @@ return {
             })
 
             vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "[A]ction" })
-            vim.keymap.set({ "n", "v" }, "<leader>cd", vim.lsp.buf.definition, { desc = "[D]efinitions" })
-            vim.keymap.set({ "n", "v" }, "<leader>cr", vim.lsp.buf.rename, { desc = "[R]ename" })
+            vim.keymap.set({ "n", "v" }, "<leader>nd", vim.lsp.buf.definition, { desc = "[D]efinitions" })
+            vim.keymap.set({ "n", "v" }, "<leader>lr", vim.lsp.buf.rename, { desc = "[R]ename" })
         end,
     },
 }

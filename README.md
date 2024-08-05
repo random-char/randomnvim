@@ -1,3 +1,19 @@
+Usefull commands
+================
+
+<table>
+    <tr>
+        <th>Command</th>
+        <th>Action</th>
+        <th>Mode</th>
+    </tr>
+    <tr>
+        <td>*</td>
+        <td>Select all occurnaces of current word</td>
+        <td>N</td>
+        </tr>
+</table>
+
 Keymaps
 =======
 
