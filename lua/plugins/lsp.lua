@@ -13,6 +13,8 @@ return {
                     auto_install = true,
                     ensure_installed = {
                         "gopls",
+                        "eslint-lsp",
+                        "prettierd",
                     },
                 },
             })
@@ -37,9 +39,19 @@ return {
                 capabilities = capabilities,
             })
 
+            lspconfig.eslint.setup({
+                capabilities = capabilities,
+            })
+
+            -- code
             vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "[A]ction" })
-            vim.keymap.set({ "n", "v" }, "<leader>nd", vim.lsp.buf.definition, { desc = "[D]efinitions" })
+            vim.keymap.set({ "n", "v" }, "<leader>cd", vim.lsp.buf.definition, { desc = "[D]efinitions" })
+            vim.keymap.set({ "n", "v" }, "<leader>ci", vim.lsp.buf.implementation, { desc = "[I]mplementations" })
+            vim.keymap.set({ "n", "v" }, "<leader>cr", vim.lsp.buf.references, { desc = "[R]eferences" })
+
+            -- lsp
             vim.keymap.set({ "n", "v" }, "<leader>lr", vim.lsp.buf.rename, { desc = "[R]ename" })
+            vim.keymap.set({ "n", "v" }, "<leader>lh", vim.lsp.buf.hover, { desc = "[H]over" })
         end,
     },
 }

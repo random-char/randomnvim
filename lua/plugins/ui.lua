@@ -67,10 +67,14 @@ return {
 					c = {
 						name = "[C]ode",
 						-- a = "[A]ction"
+						-- d = "[D]efinitions",
+						-- i = "[I]mplementations",
 						-- f = "[F]ormat",
+                        -- r = "[R]eferences",
 					},
 					d = {
 						name = "[D]ebug",
+                        -- b = "Toggle [B]reakpoint",
 						-- c = "[C]ontinue",
 						-- o = "[O]ver",
 						-- i = "[I]nto",
@@ -82,17 +86,17 @@ return {
 					},
 					g = {
 						name = "[G]it",
-						-- b = "Show [B]lame",
+						-- b = "[B]lame line",
 						-- h = "Preview [H]unk",
 						-- l = "[L]azyGit",
 					},
 					l = {
 						name = "[L]SP",
 						-- r = "[R]ename"
+						-- h = "[H]over",
 					},
 					n = {
 						name = "[N]avigate",
-						-- d = "[D]efinitions",
 						n = {"<cmd>bnext<cr>", "[N]ext"},
 						p = {"<cmd>bprev<cr>", "[P]rev"},
 					},
