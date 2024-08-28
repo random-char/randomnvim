@@ -1,5 +1,5 @@
 return {
-	{ "none-ls-extras.nvim" },
+	{ "nvimtools/none-ls-extras.nvim" },
 	{
 		"nvimtools/none-ls.nvim",
 		config = function()
@@ -12,12 +12,13 @@ return {
 					null_ls.builtins.diagnostics.phpcs,
 					null_ls.builtins.diagnostics.phpstan,
 					null_ls.builtins.formatting.phpcsfixer,
-                    --js
-                    null_ls.builtins.formatting.prettierd,
+					--js
+					null_ls.builtins.formatting.prettierd,
 				},
 			})
 
-			vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format, { desc = "[F]ormat" })
+			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "[A]ction" })
+			vim.keymap.set({ "n", "v" }, "<leader>cf", vim.lsp.buf.format, { desc = "[F]ormat" })
 		end,
 	},
 }

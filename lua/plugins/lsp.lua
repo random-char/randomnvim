@@ -12,7 +12,12 @@ return {
                 opts = {
                     auto_install = true,
                     ensure_installed = {
+                        -- golang
                         "gopls",
+                        -- php 
+                        "phpactor",
+                        "psalm",
+                        -- js
                         "eslint-lsp",
                         "prettierd",
                     },
@@ -39,12 +44,15 @@ return {
                 capabilities = capabilities,
             })
 
+            lspconfig.psalm.setup({
+                capabilities = capabilities,
+            })
+
             lspconfig.eslint.setup({
                 capabilities = capabilities,
             })
 
             -- code
-            vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "[A]ction" })
             vim.keymap.set({ "n", "v" }, "<leader>cd", vim.lsp.buf.definition, { desc = "[D]efinitions" })
             vim.keymap.set({ "n", "v" }, "<leader>ci", vim.lsp.buf.implementation, { desc = "[I]mplementations" })
             vim.keymap.set({ "n", "v" }, "<leader>cr", vim.lsp.buf.references, { desc = "[R]eferences" })

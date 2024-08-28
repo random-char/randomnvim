@@ -1,4 +1,3 @@
---todo add highlight
 return {
 	--theme
 	{
@@ -63,44 +62,37 @@ return {
 			},
 			config = function()
 				local wk = require("which-key")
-				wk.register({
-					c = {
-						name = "[C]ode",
-						-- a = "[A]ction"
-						-- d = "[D]efinitions",
-						-- i = "[I]mplementations",
-						-- f = "[F]ormat",
-                        -- r = "[R]eferences",
-					},
-					d = {
-						name = "[D]ebug",
-                        -- b = "Toggle [B]reakpoint",
-						-- c = "[C]ontinue",
-						-- o = "[O]ver",
-						-- i = "[I]nto",
-					},
-					f = {
-						name = "[F]ind",
-						-- f = "[F]iles",
-						-- g = "Live [G]rep",
-					},
-					g = {
-						name = "[G]it",
-						-- b = "[B]lame line",
-						-- h = "Preview [H]unk",
-						-- l = "[L]azyGit",
-					},
-					l = {
-						name = "[L]SP",
-						-- r = "[R]ename"
-						-- h = "[H]over",
-					},
-					n = {
-						name = "[N]avigate",
-						n = {"<cmd>bnext<cr>", "[N]ext"},
-						p = {"<cmd>bprev<cr>", "[P]rev"},
-					},
-				}, { prefix = "<leader>" })
+				wk.add({
+					{ "<leader>c", desc = "[C]ode" },
+					-- a = "[A]ction"
+					-- d = "[D]efinitions",
+					-- i = "[I]mplementations",
+					-- f = "[F]ormat",
+					-- r = "[R]eferences",
+					{ "<leader>d", desc = "[D]ebug" },
+					-- b = "Toggle [B]reakpoint",
+					-- c = "[C]ontinue",
+					-- o = "[O]ver",
+					-- i = "[I]nto",
+					{ "<leader>f", desc = "[F]ind" },
+					-- f = "[F]iles",
+					-- g = "Live [G]rep",
+					{ "<leader>g", desc = "[G]it" },
+					-- b = "[B]lame line",
+					-- h = "Preview [H]unk",
+					-- l = "[L]azyGit",
+					{ "<leader>h", desc = "Harpoon [N]avigation" },
+					-- a = "[A]dd"
+					-- n = "[N]ext"
+					-- p = "[P]rev"
+					-- w = "[W]indow"
+					{ "<leader>l", desc = "[L]SP" },
+					-- r = "[R]ename",
+					-- h = "[H]over",
+					-- { "<leader>n", desc = "[N]avigate" },
+					-- { "<leader>nn", "<cmd>bnext<cr>", desc = "[N]ext" },
+					-- { "<leader>np", "<cmd>bprev<cr>", desc = "[P]rev" },
+				})
 			end,
 		},
 	},

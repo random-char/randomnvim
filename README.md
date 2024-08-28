@@ -1,3 +1,11 @@
+Requiremets
+===========
+
+[Ripgrep](https://github.com/BurntSushi/ripgrep)
+```
+brew install ripgrep
+```
+
 Usefull commands
 ================
 
