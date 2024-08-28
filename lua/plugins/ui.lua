@@ -25,7 +25,8 @@ return {
 			"rcarriga/nvim-notify",
 		},
 		config = function()
-			require("noice").setup({
+			local noice = require("noice")
+			noice.setup({
 				cmdline = {
 					view = "cmdline",
 				},
@@ -42,6 +43,17 @@ return {
 					long_message_to_split = true, -- long messages will be sent to a split
 					inc_rename = false, -- enables an input dialog for inc-rename.nvim
 					lsp_doc_border = false, -- add a border to hover docs and signature help
+				},
+			})
+			require("lualine").setup({
+				sections = {
+					lualine_x = {
+						{
+							noice.api.statusline.mode.get,
+							cond = noice.api.statusline.mode.has,
+							color = { fg = "#ff9e64" },
+						},
+					},
 				},
 			})
 		end,
