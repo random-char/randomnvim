@@ -54,13 +54,13 @@ return {
 			})
 
 			-- code
-			vim.keymap.set({ "n", "v" }, "<leader>cd", vim.lsp.buf.definition, { desc = "[D]efinitions" })
-			vim.keymap.set({ "n", "v" }, "<leader>ci", vim.lsp.buf.implementation, { desc = "[I]mplementations" })
+			vim.keymap.set({ "n", "v" }, "<leader>ld", vim.lsp.buf.definition, { desc = "[D]efinitions" })
+			vim.keymap.set({ "n", "v" }, "<leader>li", vim.lsp.buf.implementation, { desc = "[I]mplementations" })
 			vim.keymap.set(
 				{ "n", "v" },
-				"<leader>cr",
+				"<leader>lf",
 				telescopt_builtin.lsp_references,
-				{ desc = "[R]eferences", noremap = true, silent = true }
+				{ desc = "Re[f]erences", noremap = true, silent = true }
 			)
 
 			-- lsp

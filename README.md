@@ -19,7 +19,7 @@ Usefull commands
         <td>*</td>
         <td>Select all occurnaces of current word</td>
         <td>N</td>
-        </tr>
+    </tr>
 </table>
 
 Keymaps
@@ -49,7 +49,7 @@ Keymaps
         <td>open dir/file</td>
     </tr>
     <tr>
-        <td>-&lt;/td>
+        <td>-</td>
         <td>go up a directory</td>
     </tr>
     <tr>

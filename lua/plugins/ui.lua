@@ -77,10 +77,7 @@ return {
 				wk.add({
 					{ "<leader>c", desc = "[C]ode" },
 					-- a = "[A]ction"
-					-- d = "[D]efinitions",
-					-- i = "[I]mplementations",
 					-- f = "[F]ormat",
-					-- r = "[R]eferences",
 					{ "<leader>d", desc = "[D]ebug" },
 					-- b = "Toggle [B]reakpoint",
 					-- c = "[C]ontinue",
@@ -93,14 +90,18 @@ return {
 					-- b = "[B]lame line",
 					-- h = "Preview [H]unk",
 					-- l = "[L]azyGit",
-					{ "<leader>h", desc = "Harpoon [N]avigation" },
+					{ "<leader>n", desc = "Harpoon [N]avigation" },
 					-- a = "[A]dd"
 					-- n = "[N]ext"
 					-- p = "[P]rev"
 					-- w = "[W]indow"
 					{ "<leader>l", desc = "[L]SP" },
+					-- d = "[D]efinitions",
+					-- f = "Re[f]erences",
+					-- i = "[I]mplementations",
 					-- r = "[R]ename",
 					-- h = "[H]over",
+                    --
 					-- { "<leader>n", desc = "[N]avigate" },
 					-- { "<leader>nn", "<cmd>bnext<cr>", desc = "[N]ext" },
 					-- { "<leader>np", "<cmd>bprev<cr>", desc = "[P]rev" },
