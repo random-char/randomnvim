@@ -6,6 +6,11 @@ Requiremets
 brew install ripgrep
 ```
 
+[Delve](https://github.com/go-delve/delve)
+```
+brew install delve
+```
+
 Usefull commands
 ================
 
