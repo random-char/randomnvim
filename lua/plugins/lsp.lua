@@ -29,7 +29,7 @@ return {
 		"neovim/nvim-lspconfig",
 		lazy = false,
 		config = function()
-			local telescopt_builtin = require("telescope.builtin")
+			local telescop_builtin = require("telescope.builtin")
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 			local lspconfig = require("lspconfig")
@@ -55,11 +55,17 @@ return {
 
 			-- code
 			vim.keymap.set({ "n", "v" }, "<leader>ld", vim.lsp.buf.definition, { desc = "[D]efinitions" })
-			vim.keymap.set({ "n", "v" }, "<leader>li", vim.lsp.buf.implementation, { desc = "[I]mplementations" })
+			vim.keymap.set(
+				{ "n", "v" },
+				"<leader>li",
+				telescop_builtin.lsp_implementations,
+				{ desc = "[I]mplementations" }
+			)
+
 			vim.keymap.set(
 				{ "n", "v" },
 				"<leader>lf",
-				telescopt_builtin.lsp_references,
+				telescop_builtin.lsp_references,
 				{ desc = "Re[f]erences", noremap = true, silent = true }
 			)
 
