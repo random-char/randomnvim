@@ -11,6 +11,11 @@ brew install ripgrep
 brew install delve
 ```
 
+[Prettierd](https://github.com/fsouza/prettierd)
+```
+npm install -g @fsouza/prettierd
+```
+
 Usefull commands
 ================
 
