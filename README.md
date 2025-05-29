@@ -1,23 +1,24 @@
-Requiremets
-===========
+# Requiremets
 
 [Ripgrep](https://github.com/BurntSushi/ripgrep)
+
 ```
 brew install ripgrep
 ```
 
 [Delve](https://github.com/go-delve/delve)
+
 ```
 brew install delve
 ```
 
 [Prettierd](https://github.com/fsouza/prettierd)
+
 ```
 npm install -g @fsouza/prettierd
 ```
 
-Usefull commands
-================
+# Usefull commands
 
 <table>
     <tr>
@@ -32,8 +33,7 @@ Usefull commands
     </tr>
 </table>
 
-Keymaps
-=======
+# Keymaps
 
 <table>
     <tr>
@@ -71,3 +71,46 @@ Keymaps
     </tr>
 </table>
 
+# LSP config examples
+
+Add `.nvim.lua` file to specify per-project configs.
+
+## PHP
+
+Docker container
+
+```lua
+require("lspconfig")["intelephense"].setup({
+    before_init = function(params)
+        params.processId = vim.NIL
+    end,
+    cmd = {
+        "docker",
+        "run",
+        "-i",
+        "--rm",
+        "-v",
+        ".:/app",
+        "-w",
+        "/app",
+        "php:8.4-cli",
+        "php",
+    },
+})
+```
+
+Docker compose
+
+```lua
+require("lspconfig")["intelephense"].setup({
+    before_init = function(params)
+        params.processId = vim.NIL
+    end,
+    cmd = {
+        "docker",
+        "compose",
+        "run",
+        "php-fpm-container",
+    },
+})
+```

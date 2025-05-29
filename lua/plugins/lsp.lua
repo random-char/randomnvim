@@ -22,8 +22,9 @@ return {
                         -- odin
                         "ols",
                         -- php
-                        "phpactor",
-                        "psalm",
+                        --"phpactor",
+                        --"psalm",
+                        "intelephense",
                     },
                 },
             })
@@ -45,13 +46,87 @@ return {
                 capabilities = capabilities,
             })
 
-            lspconfig.phpactor.setup({
+            lspconfig.intelephense.setup({
                 capabilities = capabilities,
+                settings = {
+                    intelephense = {
+                        stubs = {
+                            "bcmath",
+                            "bz2",
+                            "Core",
+                            "curl",
+                            "date",
+                            "dom",
+                            "fileinfo",
+                            "filter",
+                            "gd",
+                            "gettext",
+                            "hash",
+                            "iconv",
+                            "imap",
+                            "intl",
+                            "json",
+                            "libxml",
+                            "mbstring",
+                            "mcrypt",
+                            "mysql",
+                            "mysqli",
+                            "password",
+                            "pcntl",
+                            "pcre",
+                            "PDO",
+                            "pdo_mysql",
+                            "Phar",
+                            "readline",
+                            "regex",
+                            "session",
+                            "SimpleXML",
+                            "sockets",
+                            "sodium",
+                            "standard",
+                            "superglobals",
+                            "tokenizer",
+                            "xml",
+                            "xdebug",
+                            "xmlreader",
+                            "xmlwriter",
+                            "yaml",
+                            "zip",
+                            "zlib",
+                            "wordpress-stubs",
+                            "woocommerce-stubs",
+                            "acf-pro-stubs",
+                            "wordpress-globals",
+                            "wp-cli-stubs",
+                            "genesis-stubs",
+                            "polylang-stubs",
+                        },
+                        environment = {
+                            includePaths = {
+                                "~/.composer/vendor/php-stubs/",
+                            },
+                        },
+                        files = {
+                            maxSize = 5000000,
+                        },
+                    },
+                },
             })
 
-            lspconfig.psalm.setup({
-                capabilities = capabilities,
+            local phpactor_capabilities = vim.lsp.protocol.make_client_capabilities()
+            phpactor_capabilities.textDocument.foldingRange = {
+                dynamicRegistration = false,
+                lineFoldingOnly = true,
+            }
+
+            phpactor_capabilities["textDocument"]["codeAction"] = {}
+            lspconfig.phpactor.setup({
+                capabilities = phpactor_capabilities,
             })
+
+            -- lspconfig.psalm.setup({
+            --     capabilities = capabilities,
+            -- })
 
             lspconfig.eslint.setup({
                 capabilities = capabilities,
