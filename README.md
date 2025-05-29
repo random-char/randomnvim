@@ -114,3 +114,15 @@ require("lspconfig")["intelephense"].setup({
     },
 })
 ```
+
+PHP CS
+```lua
+local null_ls = require("null-ls")
+null_ls.register(null_ls.builtins.diagnostics.phpcs.with({
+    command = "./vendor/bin/phpcs",
+}))
+
+null_ls.register(null_ls.builtins.formatting.phpcbf.with({
+    command = "./vendor/bin/phpcbf ",
+}))
+```
