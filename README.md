@@ -31,6 +31,11 @@ npm install -g @fsouza/prettierd
         <td>Select all occurnaces of current word</td>
         <td>N</td>
     </tr>
+    <tr>
+        <td>"+y<td>
+        <td>Yank to system clipboard</td>
+        <td>N, V</td>
+    </tr>
 </table>
 
 # Keymaps
@@ -110,7 +115,8 @@ require("lspconfig")["intelephense"].setup({
         "docker",
         "compose",
         "run",
-        "php-fpm-container",
+        "--rm",
+        "php-container-name",
     },
 })
 ```
@@ -119,7 +125,7 @@ PHP CS
 ```lua
 local null_ls = require("null-ls")
 null_ls.register(null_ls.builtins.diagnostics.phpcs.with({
-    command = "./vendor/bin/phpcs",
+    command = "./vendor/bin/phpcs --standard=phpcs.xml.dist",
 }))
 
 null_ls.register(null_ls.builtins.formatting.phpcbf.with({
