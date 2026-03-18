@@ -29,28 +29,25 @@ return {
 				end
 			end
 
-			-- https://github.com/go-delve/delve/blob/master/Documentation/usage/dlv_dap.md
-			dap.configurations.go = {
-				{
-					type = "delve",
-					name = "Debug",
-					request = "launch",
-					program = "${file}",
+			dap.adapters.codelldb = {
+				type = "server",
+				port = "${port}",
+				executable = {
+					command = "/home/user/Software/codelldb/adapter/codelldb",
+					args = { "--port", "${port}" },
 				},
+			}
+
+			dap.configurations.odin = {
 				{
-					type = "delve",
-					name = "Debug test", -- configuration for debugging test files
+					name = "Launch file",
+					type = "codelldb",
 					request = "launch",
-					mode = "test",
-					program = "${file}",
-				},
-				-- works with go.mod packages and sub packages
-				{
-					type = "delve",
-					name = "Debug test (go.mod)",
-					request = "launch",
-					mode = "test",
-					program = "./${relativeFileDirname}",
+					program = function()
+						return vim.fn.input("Path to executable: ", vim.fn.getcwd(), "file")
+					end,
+					cwd = "${workspaceFolder}",
+					stopOnEntry = false,
 				},
 			}
 

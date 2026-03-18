@@ -36,16 +36,15 @@ return {
 			local telescop_builtin = require("telescope.builtin")
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-			local lspconfig = require("lspconfig")
-			lspconfig.gopls.setup({
+			vim.lsp.config("gopls", {
 				capabilities = capabilities,
 			})
 
-			lspconfig.lua_ls.setup({
+			vim.lsp.config("lua_ls", {
 				capabilities = capabilities,
 			})
 
-			lspconfig.intelephense.setup({
+			vim.lsp.config("intelephense",{
 				capabilities = capabilities,
 				settings = {
 					intelephense = {
@@ -119,15 +118,15 @@ return {
 			}
 
 			phpactor_capabilities["textDocument"]["codeAction"] = {}
-			lspconfig.phpactor.setup({
+			vim.lsp.config("phpactor",{
 				capabilities = phpactor_capabilities,
 			})
 
-			lspconfig.eslint.setup({
+			vim.lsp.config("eslint",{
 				capabilities = capabilities,
 			})
 
-			lspconfig.ols.setup({
+			vim.lsp.config("ols",{
 				capabilities = capabilities,
 			})
 
